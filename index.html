@@ -1,0 +1,20 @@
+<html>
+  <head>
+
+  </head>
+  <body>    
+    <button onclick="enviar()">Enviar</button>
+  </body>
+</html>
+
+<!-- apenas isso mesmo, nada de HTML por enquanto -->
+<script>
+  // observe como usamos o protocolo ws e não HTTP
+  let ws = new WebSocket("ws://localhost:3000");
+  console.log(ws)
+  ws.onmessage = (event)   => console.log(event);
+  function enviar() {
+    ws.send("Oi, servidor!")  
+  }
+  
+</script>
